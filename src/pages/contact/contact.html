@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Categorias
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+
+    <ion-segment [(ngModel)]="categorias" color="primary">
+
+      <ion-segment-button value="Accion" (click)='soloAccion()'>
+        Accion
+      </ion-segment-button>
+      <ion-segment-button value="Fantasia" (click)='soloFantasia()'>
+        Fantasia
+      </ion-segment-button>
+      <ion-segment-button value="Romance" (click)='soloRomance()'>
+        Romance
+        </ion-segment-button>
+        <ion-segment-button value="Terror" (click)='soloTerror()'>
+        Terror
+        </ion-segment-button>
+      <ion-segment-button value="Animada" (click)='soloAnimada()'>
+        Animada
+        </ion-segment-button>
+
+    </ion-segment>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div [ngSwitch]="categorias">
+<ion-list *ngSwitchCase="'Accion'">
+    <ion-item *ngFor="let item of listaFiltrada">
+        {{item}}
+      </ion-item>
+</ion-list>
+<ion-list *ngSwitchCase="'Fantasia'">
+    <ion-item *ngFor="let item of listaFiltrada">
+        {{item}}
+      </ion-item>
+</ion-list>
+<ion-list *ngSwitchCase="'Romance'">
+    <ion-item *ngFor="let item of listaFiltrada">
+        {{item}}
+      </ion-item>
+</ion-list>
+<ion-list *ngSwitchCase="'Terror'">
+    <ion-item *ngFor="let item of listaFiltrada">
+        {{item}}
+      </ion-item>
+</ion-list>
+<ion-list *ngSwitchCase="'Animada'">
+    <ion-item *ngFor="let item of listaFiltrada">
+        {{item}}
+      </ion-item>
+</ion-list>
+  </div>
+
+</ion-content>

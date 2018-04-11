@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Peliculas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor='let item of pelis'>
+      <ion-thumbnail item-left>
+        <img src="{{item.img}}" alt="La Bella y la Bestia">
+      </ion-thumbnail>
+      <h2>{{item.titulo}}</h2>
+      <p>{{item.descripcion}}</p>
+      <button ion-button clear item-right (click)="viewItem(item)">Ver</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
